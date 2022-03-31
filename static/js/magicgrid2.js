@@ -288,17 +288,17 @@ MagicGrid.prototype.listen = function listen () {
 let magicGrid = new MagicGrid({
   container: '.container',
   animate: true,
-  gutter: 30,
+  gutter: 12,
   static: true,
   useMin: true
 });
 
-var masonrys = document.getElementsByTagName("img");
-
-for (let i = 0; 1 < masonrys.length; i++) {
-    masonrys[i].addEventListener("load", function () {
-      magicGrid.positionItems();
-    }, false);
-}
+// var masonrys = document.getElementsByTagName("img");
+//
+// for (let i = 0; 1 < masonrys.length; i++) {
+//     masonrys[i].addEventListener("load", function () {
+//       magicGrid.positionItems();
+//     }, false);
+// }
 
 magicGrid.listen();
