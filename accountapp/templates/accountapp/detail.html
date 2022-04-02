@@ -3,19 +3,21 @@
 {% block content %}
 
     <div>
-        <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
+        <div style="text-align: center; max-width: 500px; margin: 1rem auto;">
 
             {% if target_user.profile %}
             <img src="{{  target_user.profile.image.url }}" alt=""
-                 style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem; object-fit: cover">
-            <h2 style="font-family: 'NanumSquareB' ">
+                 style="height: 6rem; width: 6rem; border-radius: 20rem; margin-bottom: 1rem; object-fit: cover">
+            <h6 style="font-family: 'NanumSquareB' ">
                 {{ target_user.profile.nickname }}
                 {% if target_user == user %}
-                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                <a class="material-icons"
+                   style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem"
+                   href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
                   edit
                 </a>
                 {% endif %}
-            </h2>
+            </h6>
             <h5 style="margin-bottom: 1rem;">
                 {{ target_user.profile.message }}
             </h5>
@@ -34,15 +36,15 @@
             {% endif %}
 
             {% if target_user == user %}
-            <a href=" {% url 'accountapp:update' pk=user.pk %}">
-                <p>
-                    Change info
-                </p>
+            <a href=" {% url 'accountapp:update' pk=user.pk %}"
+               class="material-icons"
+               style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem">
+                    settings
             </a>
-            <a href=" {% url 'accountapp:delete' pk=user.pk %}">
-                <p>
-                    Quit
-                </p>
+            <a href=" {% url 'accountapp:delete' pk=user.pk %}"
+               class="material-icons"
+               style="box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem">
+                    cancel
             </a>
             {% endif %}
         </div>
